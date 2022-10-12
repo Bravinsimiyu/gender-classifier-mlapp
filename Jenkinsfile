@@ -1,11 +1,14 @@
 pipeline {
     agent {
-        label 'docker'
+        docker {
+            image 'node:18-alpine' 
+            args '-p 3000:3000' 
+        }
     }
     stages {
         stage('Build') { 
             steps {
-                echo 'testing...' 
+                echo 'testing..'
             }
         }
     }
